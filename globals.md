@@ -1,3 +1,14 @@
+## Jest Compenents
+```
+                                    JEST                                       
+          ___________________________|_____________________________                
+         |           |          |        |          |              |
+    Globals   Jest Objects    Expect  Jest Mock  Jest Cli   Jest Configure
+
+```
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|| &nbsp;&nbsp;[Globals](./globals.md) &nbsp;&nbsp; ||  &nbsp;&nbsp;[EslintConfig](./eslintConfig.md) &nbsp;&nbsp;|| &nbsp;&nbsp;[Expect](./matchers.md)&nbsp;&nbsp;||&nbsp;&nbsp;[Mocks](./mock.md)&nbsp;&nbsp;||&nbsp;&nbsp;[Jest Objects](./jestObjects.md)&nbsp;&nbsp;||&nbsp;&nbsp;[Jest Cli](./jestCli.md)&nbsp;&nbsp;||&nbsp;&nbsp;[Jest Configure](./jest.config.md) &nbsp;&nbsp;&nbsp;&nbsp;||
+
 # Globals   [For More Info Go](https://jestjs.io/docs/api)&#128072;
 
 you don't have to require or import anything to use them. However, if you prefer explicit imports, you can do import {describe, expect, test} from '@jest/globals'.
