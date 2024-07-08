@@ -222,3 +222,64 @@ test('zero', () => {
 
 These examples demonstrate how Jest's global functions and variables can be used to write descriptive and comprehensive tests for JavaScript code.
 ## [Go For More Globals](./globals.md) &#128072;
+
+## [Mocks](./mock.md) &#128072;
+
+### Mock Functions in Jest
+
+Mock functions in Jest simulate real functions for testing, helping you isolate and verify specific parts of your code.
+
+#### Example:
+
+**Real Function:**
+
+```javascript
+// userService.js
+export const fetchUserData = async (userId) => {
+  const response = await fetch(`/api/users/${userId}`);
+  return await response.json();
+};
+```
+
+**Function to Test:**
+
+```javascript
+// userProcessor.js
+const { fetchUserData } = require('./userService');
+
+export const processUserData = async (userId) => {
+  const userData = await fetchUserData(userId);
+  return `User's name is ${userData.name}`;
+};
+```
+
+**Test with Mock:**
+
+```javascript
+// userProcessor.test.js
+const { processUserData } =require('./userProcessor');
+const { fetchUserData } =require('./userService');
+
+// Mock the fetchUserData function
+jest.mock('./userService');
+
+describe('processUserData', () => {
+  it('should process user data correctly', async () => {
+    fetchUserData.mockResolvedValue({ name: 'John Doe' });
+
+    const result = await processUserData(1);
+
+    expect(fetchUserData).toHaveBeenCalledWith(1);
+    expect(result).toBe("User's name is John Doe");
+  });
+});
+```
+
+### Mocks provides
+- **Isolation**: Test units independently.
+- **Control**: Define mock return values.
+- **Verification**: Check function calls and arguments.
+
+# [Jest Objects For More Info](./jestObjects.md) &#128072;
+
+# [JEST CLI FLAGS ]('./jestCli.md) &#128072;
